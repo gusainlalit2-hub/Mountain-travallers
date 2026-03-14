@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Mountain Travellers</title>
+  <title>Mountain Travellers | Uttarakhand Tourism</title>
   <style>
     * {
       margin: 0;
@@ -13,17 +13,21 @@
     }
  
     body {
-      background: #f5f7fa;
+      background: #f4f7f9;
       color: #222;
       line-height: 1.6;
     }
  
+    html {
+      scroll-behavior: smooth;
+    }
+ 
     header {
-      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-        url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
-      color: white;
+      background: linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.55)),
+        url('kedarnath.jpg') center/cover no-repeat;
+      color: #fff;
       text-align: center;
-      padding: 100px 20px;
+      padding: 110px 20px;
     }
  
     header h1 {
@@ -32,107 +36,217 @@
     }
  
     header p {
-      font-size: 20px;
-      max-width: 800px;
+      max-width: 850px;
       margin: auto;
+      font-size: 19px;
+    }
+ 
+    .hero-buttons {
+      margin-top: 25px;
+    }
+ 
+    .hero-buttons a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+ 
+    .btn-call {
+      background: #0d3b2e;
+      color: white;
+    }
+ 
+    .btn-whatsapp {
+      background: #25D366;
+      color: white;
     }
  
     nav {
       background: #0d3b2e;
-      padding: 15px;
       text-align: center;
+      padding: 14px 10px;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
  
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 15px;
+      margin: 0 12px;
       font-weight: bold;
+      font-size: 15px;
     }
  
     section {
-      padding: 60px 20px;
-      max-width: 1100px;
+      max-width: 1150px;
       margin: auto;
+      padding: 60px 20px;
     }
  
     .section-title {
       text-align: center;
-      font-size: 32px;
-      margin-bottom: 30px;
+      font-size: 34px;
       color: #0d3b2e;
+      margin-bottom: 18px;
     }
  
-    .about p {
+    .section-subtitle {
       text-align: center;
-      max-width: 900px;
-      margin: auto;
-      font-size: 18px;
+      max-width: 850px;
+      margin: 0 auto 35px;
+      color: #555;
+      font-size: 17px;
     }
  
-    .services {
+    .about-box,
+    .contact-box,
+    .highlight-box {
+      background: white;
+      border-radius: 16px;
+      padding: 30px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+ 
+    .about-box p,
+    .highlight-box p,
+    .contact-box p {
+      font-size: 17px;
+    }
+ 
+    .services-grid,
+    .destinations-grid,
+    .gallery-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 25px;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 22px;
     }
  
     .card {
       background: white;
-      padding: 30px 20px;
-      border-radius: 15px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      border-radius: 16px;
+      padding: 24px 20px;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
       text-align: center;
     }
  
     .card h3 {
       color: #0d3b2e;
-      margin-bottom: 15px;
-      font-size: 24px;
+      margin-bottom: 12px;
+      font-size: 23px;
     }
  
-    .highlight {
+    .destination-card {
+      background: white;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+ 
+    .destination-card img {
+      width: 100%;
+      height: 220px;
+      object-fit: cover;
+      display: block;
+    }
+ 
+    .destination-card .content {
+      padding: 18px;
+    }
+ 
+    .destination-card h3 {
+      color: #0d3b2e;
+      margin-bottom: 8px;
+      font-size: 22px;
+    }
+ 
+    .gallery-item {
+      background: white;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 4px 18px rgba(0,0,0,0.08);
+    }
+ 
+    .gallery-item img {
+      width: 100%;
+      height: 240px;
+      object-fit: cover;
+      display: block;
+    }
+ 
+    .gallery-item p {
+      text-align: center;
+      padding: 12px;
+      font-weight: bold;
+      color: #0d3b2e;
+    }
+ 
+    .highlight-box {
       background: #0d3b2e;
       color: white;
       text-align: center;
-      border-radius: 15px;
-      padding: 40px 20px;
     }
  
-    .highlight h2 {
-      margin-bottom: 15px;
+    .highlight-box h2 {
+      margin-bottom: 12px;
       font-size: 30px;
     }
  
     .contact-box {
-      background: white;
-      border-radius: 15px;
-      padding: 35px 20px;
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
       text-align: center;
     }
  
     .contact-box p {
-      font-size: 18px;
       margin: 10px 0;
     }
  
-    .btn {
-      display: inline-block;
+    .contact-actions {
       margin-top: 20px;
-      background: #0d3b2e;
-      color: white;
-      padding: 12px 24px;
-      text-decoration: none;
+    }
+ 
+    .contact-actions a {
+      display: inline-block;
+      margin: 8px;
+      padding: 12px 22px;
       border-radius: 8px;
+      text-decoration: none;
       font-weight: bold;
+      color: white;
+    }
+ 
+    .call-action {
+      background: #0d3b2e;
+    }
+ 
+    .whatsapp-action {
+      background: #25D366;
     }
  
     footer {
       background: #111;
       color: white;
       text-align: center;
-      padding: 20px;
-      margin-top: 30px;
+      padding: 22px 15px;
+      margin-top: 20px;
+    }
+ 
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 34px;
+      }
+ 
+      header p {
+        font-size: 16px;
+      }
+ 
+      nav a {
+        display: inline-block;
+        margin: 6px 8px;
+        font-size: 14px;
+      }
     }
   </style>
 </head>
@@ -141,68 +255,220 @@
   <header>
     <h1>Mountain Travellers</h1>
     <p>
-      Explore the beauty of Uttarakhand with trekking, camping, night stay,
-      and unforgettable mountain experiences.
+      Explore the soul of Uttarakhand with trekking, camping, night stay,
+      and unforgettable Himalayan journeys.
     </p>
+ 
+    <div class="hero-buttons">
+      <a href="tel:8650731023" class="btn-call">Call Now</a>
+      <a href="https://wa.me/918650731023" class="btn-whatsapp" target="_blank">WhatsApp</a>
+    </div>
   </header>
  
   <nav>
     <a href="#about">About</a>
     <a href="#services">Services</a>
+    <a href="#destinations">Destinations</a>
+    <a href="#gallery">Gallery</a>
     <a href="#contact">Contact</a>
   </nav>
  
-  <section id="about" class="about">
+  <section id="about">
     <h2 class="section-title">About Us</h2>
-    <p>
-      Mountain Travellers is a Uttarakhand-based travel service dedicated to giving guests
-      a real mountain experience. We help travelers explore the natural beauty of Kedar Valley
-      and nearby destinations with comfort, adventure, and local support.
+    <p class="section-subtitle">
+      Mountain Travellers is your local tourism partner from Kedar Valley, Uttarakhand.
     </p>
+    <div class="about-box">
+      <p>
+        We help travelers discover the natural beauty, spiritual peace, and adventure
+        of Uttarakhand. From sacred destinations to scenic trekking routes, our goal
+        is to give every guest a safe, memorable, and authentic mountain experience.
+      </p>
+    </div>
   </section>
  
   <section id="services">
     <h2 class="section-title">Our Services</h2>
-    <div class="services">
+    <p class="section-subtitle">
+      Simple, reliable, and experience-focused travel support for guests visiting Uttarakhand.
+    </p>
+    <div class="services-grid">
       <div class="card">
         <h3>Trekking</h3>
-        <p>Guided trekking experiences through scenic mountain routes and natural trails.</p>
+        <p>Guided trekking routes with local support and memorable mountain experiences.</p>
       </div>
       <div class="card">
         <h3>Camping</h3>
-        <p>Safe and memorable camping under the open sky with beautiful mountain views.</p>
+        <p>Comfortable camping arrangements in beautiful natural surroundings.</p>
       </div>
       <div class="card">
         <h3>Night Stay</h3>
-        <p>Comfortable night stay arrangements for tourists visiting Uttarakhand.</p>
+        <p>Safe and convenient night stay options for solo travelers, friends, and families.</p>
+      </div>
+      <div class="card">
+        <h3>Travel Guidance</h3>
+        <p>Assistance for planning routes, destinations, and local travel support.</p>
       </div>
     </div>
   </section>
  
   <section>
-    <div class="highlight">
+    <div class="highlight-box">
       <h2>Why Choose Mountain Travellers?</h2>
       <p>
-        Local experience, trusted guidance, beautiful destinations, and a personalized travel journey
-        from the heart of Uttarakhand.
+        Local knowledge, trusted support, beautiful destinations, and a personalized
+        travel experience from the heart of Uttarakhand.
       </p>
+    </div>
+  </section>
+ 
+  <section id="destinations">
+    <h2 class="section-title">Top Destinations</h2>
+    <p class="section-subtitle">
+      Explore some of the most loved and beautiful places of Uttarakhand with us.
+    </p>
+ 
+    <div class="destinations-grid">
+      <div class="destination-card">
+        <img src="kedarnath.jpg" alt="Kedarnath">
+        <div class="content">
+          <h3>Kedarnath</h3>
+          <p>One of the most sacred and iconic Himalayan destinations.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="tungnath.jpg" alt="Tungnath">
+        <div class="content">
+          <h3>Tungnath</h3>
+          <p>A beautiful temple trek with stunning mountain views.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="rudranath.jpg" alt="Rudranath">
+        <div class="content">
+          <h3>Rudranath</h3>
+          <p>A peaceful spiritual destination surrounded by nature.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="kedarkantha.jpg" alt="Kedarkantha">
+        <div class="content">
+          <h3>Kedarkantha</h3>
+          <p>A famous trekking destination known for snow and scenic peaks.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="auli.jpg" alt="Auli">
+        <div class="content">
+          <h3>Auli</h3>
+          <p>A popular hill destination known for snow views and adventure.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="dayara_bugyal.jpg" alt="Dayara Bugyal">
+        <div class="content">
+          <h3>Dayara Bugyal</h3>
+          <p>Wide meadows, trekking beauty, and unforgettable mountain scenery.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="chandrashila.jpg" alt="Chandrashila">
+        <div class="content">
+          <h3>Chandrashila</h3>
+          <p>A breathtaking summit known for sunrise and panoramic peaks.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="bedini_bugyal.jpg" alt="Bedini Bugyal">
+        <div class="content">
+          <h3>Bedini Bugyal</h3>
+          <p>A dreamy meadow destination perfect for trekking lovers.</p>
+        </div>
+      </div>
+ 
+      <div class="destination-card">
+        <img src="deoriatal.jpg" alt="Deoriatal">
+        <div class="content">
+          <h3>Deoriatal</h3>
+          <p>A calm lake destination with beautiful reflections and views.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+ 
+  <section id="gallery">
+    <h2 class="section-title">Photo Gallery</h2>
+    <p class="section-subtitle">
+      A glimpse of the beautiful places you can explore with Mountain Travellers.
+    </p>
+ 
+    <div class="gallery-grid">
+      <div class="gallery-item">
+        <img src="kedarnath.jpg" alt="Kedarnath">
+        <p>Kedarnath</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="tungnath.jpg" alt="Tungnath">
+        <p>Tungnath</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="rudranath.jpg" alt="Rudranath">
+        <p>Rudranath</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="kedarkantha.jpg" alt="Kedarkantha">
+        <p>Kedarkantha</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="auli.jpg" alt="Auli">
+        <p>Auli</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="dayara_bugyal.jpg" alt="Dayara Bugyal">
+        <p>Dayara Bugyal</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="chandrashila.jpg" alt="Chandrashila">
+        <p>Chandrashila</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="bedini_bugyal.jpg" alt="Bedini Bugyal">
+        <p>Bedini Bugyal</p>
+      </div>
+ 
+      <div class="gallery-item">
+        <img src="deoriatal.jpg" alt="Deoriatal">
+        <p>Deoriatal</p>
+      </div>
     </div>
   </section>
  
   <section id="contact">
     <h2 class="section-title">Contact Us</h2>
+    <p class="section-subtitle">
+      Book your next Uttarakhand trip with Mountain Travellers.
+    </p>
+ 
     <div class="contact-box">
       <p><strong>Business Name:</strong> Mountain Travellers</p>
       <p><strong>Location:</strong> Kedar Valley, Uttarakhand</p>
       <p><strong>Phone:</strong> 8650731023</p>
-      <a class="btn" href="tel:8650731023">Call Now</a>
-    </div>
-  </section>
  
-  <footer>
-    <p>© 2026 Mountain Travellers | Uttarakhand Tourism Services</p>
-  </footer>
- 
-</body>
-</html>
+      <div class="contact-actions">
+        <a href="tel:8650731023" class="call-action">Call Now</a>
+        <a href="https://wa.me/918650731023" target="_blank" cl
  
